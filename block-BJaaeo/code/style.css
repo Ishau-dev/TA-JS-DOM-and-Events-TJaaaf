@@ -92,6 +92,9 @@ a{
     flex: 0 1 24%;
 }
 
+.flex-70{
+    flex: 0 1 80%;
+}
 .flex-10{
     flex: 0 1 10%;
 }
@@ -139,23 +142,32 @@ a{
 }
 
 .pad{
-    padding: 1rem 0;
+    padding: 0.5rem 0;
 }
-/* header */
 
-.header h1{
- 
+
+/* header */
+.header h1{  
     font-size: 3rem;
 }
 
 /* main */
 
+.calculator{
+    width: 500px;
+    margin: 0 auto;  
+}
+
+
 .result{
     background-color: black;
     color: var(--third);
     border-radius: 0.5rem;
-    font-size: 2rem;
+    font-size: 2rem;  
+    text-align: right;
 }
+
+
 
 /* box */
 .red{
@@ -163,8 +175,38 @@ a{
     border-radius: 0.5rem;
     color: var(--third);
     font-size: 2rem;
+    border: none;
+    margin-bottom: 0.5rem;
 }
 
-.box{
-    background-color: var(--first);
+.green{   
+    background-color: #2C8080;
+    border-radius: 0.5rem;
+    color: black;
+    font-size: 2rem;
+    border: none;
+    flex-grow: 1;
+    margin-bottom: 0.5rem;
 }
+
+.grey{
+    background-color:#CFCFCF;
+    border-radius: 0.5rem;
+    color: black;
+    font-size: 2rem;
+    border: none;
+    margin-bottom: 0.5rem;
+}
+
+.reset{
+    background-color: #3D1B10;
+    border-radius: 0.5rem;
+    color: #FBE0C0;
+    font-size: 2rem;
+    border: none;
+    margin-bottom: 0.5rem;;
+}
+
+
+
+
