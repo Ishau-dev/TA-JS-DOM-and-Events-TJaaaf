@@ -11,22 +11,44 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header class="header center">
+    <header class="header center pad">
       <h1>🤯 Calculator 🤩</h1>
     </header>
     <main>
-      <section class="container ">
-          <div class="">
-              <div class="result flex items-right padding">
-                  12 + 12
+      <section class="container">
+          <div class="calculator">
+              <div >
+                 <h1 class="result padding">12+12</h1> 
               </div>
-              <div class="pad flex justify-between">
-                  <div class="red padding center flex-20">+</div>
-                  <div class="red padding center flex-20">-</div>
-                  <div class="red padding center flex-20">*</div>
-                  <div class="red padding center flex-20">%</div>
+              <div class="flex justify-between">
+              <div class="pad flex  column flex-20">
+                <button class="red add padding  center">+</button>
+                <button class="grey padding  center">7</button>
+                <button class="grey padding  center">4</button>
+                <button class="grey padding  center">1</button>
+                <button class="grey padding  center">.</button>
+                
               </div>
-              
+              <div class="pad flex  column flex-20">
+                <button class="red sub padding  center">-</button>
+                <button class="grey padding  center">8</button>
+                <button class="grey padding  center">5</button>
+                <button class="grey padding  center">2</button>
+                <button class="grey padding  center">0</button>
+              </div>
+              <div class="pad flex  column flex-20 ">
+                <button class="red mul padding center">*</button>
+                <button class="grey padding  center">9</button>
+                <button class="grey padding  center">6</button>
+                <button class="grey padding  center">3</button>
+                <button class="reset padding  center">C</button>
+              </div>
+              <div class="pad flex  column flex-20">
+                <button class="red percentage padding   center">%</button>
+                <button class="green padding center">=</button>
+                
+              </div>
+            </div>
           </div>
       </section>
     </main>
