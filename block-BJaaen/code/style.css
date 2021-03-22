@@ -1,0 +1,200 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+*,*::before,*::after{
+    box-sizing: border-box;
+}
+
+:root{
+  --first: #CFCFCF;
+  --second: #710133;
+  --third: #ffffff;
+  --fourth: #F2F4F8;
+}
+
+
+html{
+    font-size: 16px;
+}
+
+body{
+    font-size: 16px;
+    font-family: 'Raleway', sans-serif;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    background-color: var(--fourth);
+}
+
+a{
+    text-decoration: none;
+    color: var(--first);
+}
+
+.flex{
+    display: flex;
+}
+
+.flex-48{
+    flex: 0 1 48%;
+}
+
+.flex-30{
+    flex: 0 1 30%;
+}
+
+.flex-20{
+    flex: 0 1 24%;
+}
+
+.flex-70{
+    flex: 0 1 80%;
+}
+.flex-10{
+    flex: 0 1 10%;
+}
+
+.center{
+    text-align: center;
+}
+
+.justify-around{
+    justify-content: space-around;
+}
+
+.column{
+    flex-direction: column;
+}
+
+.full-width{
+    width: 100%;
+}
+
+.justify-between{
+    justify-content: space-between;
+}
+
+.items-center{
+    align-items: center;
+}
+
+.wrap{
+    flex-wrap: wrap;
+}
+
+.items-right{
+    justify-content: flex-end;
+}
+
+.container{
+    max-width: 500px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.padding{
+    padding: 2rem 0;
+}
+
+
+
+.main{
+    margin: 0 auto;
+    width: 600px;
+    box-shadow: 3px 5px 14px 5px #ccc;
+    border-radius: 0.6rem;
+    margin-top: 150px;
+    height: 600px;
+}
+
+.header{
+    background-color: #3490FF;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 0.6rem 0.6rem 0 0;
+    padding: 2rem 0;
+}
+
+.containers{
+    max-width: 450px;
+}
+
+.you h1{
+    font-size: 2rem;
+}
+
+.optn1{
+    font-size: 3rem;
+    color: cornflowerblue;
+}
+
+.optn2{
+    font-size: 3rem;
+    color: tomato;
+}
+
+.refresh{
+    font-size: 3rem;
+}
+
+.result{
+    color: cornflowerblue;
+}
+
+.result2{
+    color: tomato;
+}
+
+.won{
+    font-size: 2rem;
+    text-align: center;
+    color: turquoise;
+    font-weight: bold;
+}
