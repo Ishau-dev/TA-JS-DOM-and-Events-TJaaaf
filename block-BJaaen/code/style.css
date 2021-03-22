@@ -183,3 +183,18 @@ a{
 .refresh{
     font-size: 3rem;
 }
+
+.result{
+    color: cornflowerblue;
+}
+
+.result2{
+    color: tomato;
+}
+
+.won{
+    font-size: 2rem;
+    text-align: center;
+    color: turquoise;
+    font-weight: bold;
+}
