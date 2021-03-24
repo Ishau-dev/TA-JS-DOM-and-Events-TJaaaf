@@ -133,3 +133,15 @@ input,button{
 header{
     margin-top: 5rem;
 }
+
+small{
+    color: red;
+}
+
+.error{
+    border: 1px solid tomato;
+}
+
+.success{
+    border: 1px solid green;
+}
