@@ -1,0 +1,278 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+*,*::before,*::after{
+    box-sizing: border-box;
+}
+
+:root{
+  --first: #675954;
+  --second: #b83f45;
+  --third: #ffffff;
+}
+
+.active{
+    color: var(--second);
+}
+
+html{
+    font-size: 16px;
+}
+
+body{
+    font-size: 16px;
+    font-family: 'Raleway', sans-serif;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    background-color: rgba(0, 0, 0,0.09);
+}
+
+a{
+    text-decoration: none;
+    color: var(--first);
+}
+
+.flex{
+    display: flex;
+}
+
+.flex-60{
+    flex: 0 1 60%;
+}
+
+.flex-25{
+    flex: 0 1 25%;
+    align-items: flex-start;
+    height: 480px;
+}
+
+.flex-20{
+    flex: 0 1 20%;
+}
+
+.center{
+    text-align: center;
+}
+
+.justify-around{
+    justify-content: space-around;
+}
+
+.column{
+    flex-direction: column;
+}
+
+.full-width{
+    width: 100%;
+}
+
+.justify-between{
+    justify-content: space-between;
+}
+
+.items-center{
+    align-items: center;
+}
+
+.container{
+    max-width: 600px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.padding{
+    padding: 0.5rem 0.5rem;
+}
+
+.padding-content{
+    padding: 0.5rem 0.5rem;
+}
+
+
+.info{
+    background-color: white;
+}
+
+hr{
+    border-style: dashed;
+    opacity: 0.3;
+    
+}
+
+.slanted{
+    font-style: italic;
+    background-color: #F1F1F1;
+    border-radius: 0.3rem;
+    color: grey;
+    margin: 2rem 0;
+    
+}
+.quote{
+    position: relative;
+}
+.quote1{
+    position: absolute;
+    font-size: 6rem;
+    color: grey;
+    font-style: italic;
+    top: -50px;
+    left: -12px;
+    opacity: 0.5;
+}
+
+.quote2{
+    position: absolute;
+    font-size: 6rem;
+    color: grey;
+    font-style: italic;
+    bottom: -100px;
+    right: 12px;
+    opacity: 0.5;
+}
+
+.fass{
+    position: absolute;
+    font-size: 3rem;
+    color: #E8E8E8;
+    top: 155px;
+    right: 35px;
+    opacity: 0.7;
+    border: none;
+}
+
+.right{
+    text-align: right;
+}
+
+.left-footer p{
+    font-style: italic;
+    color: grey;
+}
+
+
+
+/* todos */
+
+.todos h1{
+    font-size: 6rem;
+    color: rgba(184, 63, 69, 0.5);
+    
+}
+
+.search-box{
+    width: 100%;
+    padding: 1.5rem 0 1.5rem 3.5rem;
+    border: none;
+    box-shadow: 1px 1px 3px 1px #ccc;
+    font-size: 1.2rem;
+}
+
+::placeholder{
+    font-size: 1.5rem;
+    font-style: italic;
+    color: grey;
+    opacity: 0.2;  
+    
+}
+
+.search-nav{
+    font-size: 1.5rem;
+    color: grey;
+    position: absolute;
+    top: 175px;
+    left: 600px;
+    z-index: 1;
+    padding-left: 10px;
+    opacity: 0.2;
+}
+
+.things{
+    background-color: white;
+    box-shadow: 1px 1px 3px 2px #ccc;  
+}
+
+.things li{
+    border-bottom: 1px solid rgb(128, 128, 128,0.4);
+    padding: 1rem 0;
+}
+
+.close{
+    margin-right: 1.5rem;
+    color: var(--second);
+    font-size: 1.5rem;
+}
+
+.inactive{
+    border: none;
+    background: none;
+    color: grey;
+}
+
+button:hover{
+    border: 1px solid var(--second)
+}
+
+.things img{
+margin-right: 1rem;
+}
+
+.status{
+    padding: 1rem 0;
+    color: grey;
+    background-color: white;
+    box-shadow: 1px 1px 3px 2px #ccc; 
+}
+
+.pad{
+    padding: 0 5px 0 15px;
+}
+
+.text-dec{
+    
+}
