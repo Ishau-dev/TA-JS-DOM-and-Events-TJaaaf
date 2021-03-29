@@ -30,7 +30,10 @@ let handleAdd= (event)=>{
 
 let handleDelete = (event)=>{
     let index = event.target.dataset.id;
-    allTodos.splice(index,1);
+    if(allTodos[index].isDone == "assets/on.svg"){
+        allTodos.splice(index,1);
+    }
+    
     createUi(allTodos);
 }
 
@@ -39,22 +42,27 @@ let toggleTodo = (event)=>{
     if(allTodos[index].isDone == "assets/off.svg"){
         allTodos[index].isDone = "assets/on.svg";
         allTodos[index].strike = "line-through";
+        clear.style.display="flex";
         count.innerText--;
         createUi(allTodos);
     }else if(allTodos[index].isDone == "assets/on.svg"){
         allTodos[index].isDone = "assets/off.svg";
         allTodos[index].strike = "";
+        clear.style.display="";
         count.innerText++;
         createUi(allTodos);
     }
 }
 
 let handleClear =()=>{
+
+    
     completedTodo = allTodos.filter(todo => {
         if(todo.isDone == "assets/on.svg"){
             return todo;   
         }
     });
+    // console.log(completedTodo);
     completedTodo.splice(0,completedTodo.length);
     
     createUi(completedTodo);
@@ -62,8 +70,11 @@ let handleClear =()=>{
 clear.addEventListener('click',handleClear);
 
  let handleAll =()=>{
-    
-     createUi(allTodos);
+    //  if(handleClear){
+    //      handleActive();
+    //  }else {
+        createUi(allTodos);
+    //  }    
  }
  all.addEventListener('click',handleAll);
 
@@ -97,13 +108,16 @@ let handleActive =()=>{
 activeBtn.addEventListener('click',handleActive);
 
 let handleCompleted =()=>{
+    // if(handleClear){
+    //     handleActive();
+    // }else {
     completedTodo = allTodos.filter(todo => {
          if(todo.isDone == "assets/on.svg"){
              
              return todo;   
          }
      });
-     
+     createUi(completedTodo);
  }
  completed.addEventListener('click',handleCompleted);
 
