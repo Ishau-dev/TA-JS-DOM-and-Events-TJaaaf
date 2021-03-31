@@ -7,8 +7,8 @@ let completed = document.querySelector('.completed');
 let all = document.querySelector('.all');
 let clear= document.querySelector('.clear');
 
-let allTodos=[];
-count.innerText=0;
+let allTodos=localStorage.getItem('allTodos')?JSON.parse(localStorage.getItem('allTodos')):[];
+count.innerText=localStorage.getItem('count')?localStorage.getItem('count'):0;
 let handleAdd= (event)=>{
     
     event.preventDefault();
@@ -24,6 +24,8 @@ let handleAdd= (event)=>{
         allTodos.push(todo);
         footer.style.display="flex";
         createUi(allTodos);
+        localStorage.setItem('allTodos',JSON.stringify(allTodos));
+        localStorage.setItem('count',count.innerText);
    }
    
 }
@@ -35,6 +37,8 @@ let handleDelete = (event)=>{
     }
     
     createUi(allTodos);
+    localStorage.setItem('allTodos',JSON.stringify(allTodos));
+    localStorage.setItem('count',count.innerText);
 }
 
 let toggleTodo = (event)=>{
@@ -45,18 +49,24 @@ let toggleTodo = (event)=>{
         clear.style.display="flex";
         count.innerText--;
         createUi(allTodos);
+        localStorage.setItem('allTodos',JSON.stringify(allTodos));
+        localStorage.setItem('count',count.innerText);
     }else if(allTodos[index].isDone == "assets/on.svg"){
         allTodos[index].isDone = "assets/off.svg";
         allTodos[index].strike = "";
         clear.style.display="";
         count.innerText++;
         createUi(allTodos);
+        localStorage.setItem('allTodos',JSON.stringify(allTodos));
+        localStorage.setItem('count',count.innerText);
     }
 }
 
 clear.addEventListener('click',() =>{
     allTodos = allTodos.filter(todo => todo.isDone =="assets/off.svg");
     createUi();
+    localStorage.setItem('allTodos',JSON.stringify(allTodos));
+    localStorage.setItem('count',count.innerText);
 });
 
  let handleAll =()=>{ 
@@ -71,18 +81,26 @@ let handleSelectAll = () =>{
             if(todo.isDone == "assets/off.svg"){
             todo.isDone = "assets/on.svg";
             todo.strike = "line-through";
+            clear.style.display="flex";
             count.innerText--;
             createUi(allTodos);
+            localStorage.setItem('allTodos',JSON.stringify(allTodos));
+            localStorage.setItem('count',count.innerText);
             
         }
             else{
                 todo.isDone = "assets/off.svg";
                 todo.strike = "";
+                clear.style.display="";
                 count.innerText++;
                 createUi(allTodos);
+                localStorage.setItem('allTodos',JSON.stringify(allTodos));
+                localStorage.setItem('count',count.innerText);
             }          
         });
         createUi(allTodos);
+        localStorage.setItem('allTodos',JSON.stringify(allTodos));
+        localStorage.setItem('count',count.innerText);
 }
 let handleActive =()=>{
    activeTodo= allTodos.filter(todo => {
@@ -91,6 +109,8 @@ let handleActive =()=>{
         }
     });
     createUi(activeTodo);
+    localStorage.setItem('allTodos',JSON.stringify(allTodos));
+    localStorage.setItem('count',count.innerText);
 }
 activeBtn.addEventListener('click',handleActive);
 
@@ -102,6 +122,8 @@ let handleCompleted =()=>{
          }
      });
      createUi(completedTodo);
+     localStorage.setItem('allTodos',JSON.stringify(allTodos));
+     localStorage.setItem('count',count.innerText);
  }
  completed.addEventListener('click',handleCompleted);
 
