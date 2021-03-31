@@ -54,28 +54,15 @@ let toggleTodo = (event)=>{
     }
 }
 
-let handleClear =()=>{
+clear.addEventListener('click',() =>{
+    allTodos = allTodos.filter(todo => todo.isDone =="assets/off.svg");
+    createUi();
+});
 
-    
-    completedTodo = allTodos.filter(todo => {
-        if(todo.isDone == "assets/on.svg"){
-            return todo;   
-        }
-    });
-    // console.log(completedTodo);
-    completedTodo.splice(0,completedTodo.length);
-    
-    createUi(completedTodo);
-}
-clear.addEventListener('click',handleClear);
-
- let handleAll =()=>{
-    //  if(handleClear){
-    //      handleActive();
-    //  }else {
-        createUi(allTodos);
-    //  }    
+ let handleAll =()=>{ 
+        createUi(allTodos);   
  }
+
  all.addEventListener('click',handleAll);
 
 let handleSelectAll = () =>{
@@ -108,9 +95,6 @@ let handleActive =()=>{
 activeBtn.addEventListener('click',handleActive);
 
 let handleCompleted =()=>{
-    // if(handleClear){
-    //     handleActive();
-    // }else {
     completedTodo = allTodos.filter(todo => {
          if(todo.isDone == "assets/on.svg"){
              
@@ -122,7 +106,7 @@ let handleCompleted =()=>{
  completed.addEventListener('click',handleCompleted);
 
 
-let createUi= (arr)=>{
+let createUi= (arr=allTodos)=>{
     root.innerHTML="";
     arr.forEach((todo,index)=>{
         let caret = document.createElement('i');
