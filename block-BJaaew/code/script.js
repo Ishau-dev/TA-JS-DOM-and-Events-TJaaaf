@@ -327,19 +327,23 @@
 //     ],
 //   };
 
-let peopleArr=got.houses.map(house => { return house.people});
+// let peopleArr=got.houses.map(house => { return house.people});
 let housesBtns = document.querySelector('.housesBtns');
 let gotProfile = document.querySelector('.profile');
 let input = document.querySelector('#text');
-
+let peopleArr = got.houses.map(house=> house.people);
+let allPeople= got.houses.reduce((acc,cv)=> {
+    acc = acc.concat(cv.people); 
+    return acc;
+},[]);
         let searchResult = [];
         let handleSearch= (event) =>{
             
             event.preventDefault();
-            if(event.keyCode == 13 && event.target.value !== ""){
-                console.log(event.target.value);
-                event.target.value="";
-            }
+                let searchText = event.target.value;
+                searchResult = allPeople.filter(p => p.name.includes(searchText));
+                people(searchResult);
+            
         }
         input.addEventListener('keyup',handleSearch);
 
@@ -347,7 +351,7 @@ let input = document.querySelector('#text');
 
           let handleBtn = (event) =>{
               let index = event.target.dataset.id;
-              btnArr=peopleArr[index];
+              btnArr= peopleArr[index];
               console.log(btnArr);
               gotProfile.innerHTML="";
               btnArr.forEach(p => 
@@ -381,9 +385,9 @@ let input = document.querySelector('#text');
           }
           houses();
 
-let people = () =>{
+let people = (data=allPeople) =>{
     gotProfile.innerHTML="";
-    peopleArr.forEach(peo => peo.forEach(p=>
+    data.forEach(p =>
         {
             let div = document.createElement('div');
             div.classList.add('card','center','flex-30');
@@ -399,7 +403,7 @@ let people = () =>{
             div.append(img,h1,paragraph,link);
             gotProfile.append(div);
     
-        }));
+        });
 }
 
 people();
