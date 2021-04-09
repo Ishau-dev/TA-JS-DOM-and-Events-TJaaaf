@@ -1,146 +1,60 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
+
 body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  margin: 20px 0;
+  background: #6589F9;
 }
 
-*,*::before,*::after{
-    box-sizing: border-box;
-}
-
-:root{
-  --first: #675954;
-  --second: #b83f45;
-  --third: #ffffff;
-}
-
-.active{
-    color: var(--second);
-}
-
-html{
-    font-size: 16px;
-}
-
-body{
-    font-size: 16px;
-    font-family: 'Raleway', sans-serif;
-    line-height: 1.5;
-    -webkit-font-smoothing: antialiased;
-    background-color: #6589F9;
-}
-
-a{
-    text-decoration: none;
-    color: var(--first);
-}
-
-.flex{
-    display: flex;
-}
-
-.flex-60{
-    flex: 0 1 60%;
-}
-
-.flex-25{
-    flex: 0 1 25%;
-    align-items: flex-start;
-    height: 480px;
-}
-
-.flex-30{
-    flex: 0 1 30%;
-}
-
-.wrap{
-  flex-wrap: wrap;
-}
-.center{
-    text-align: center;
-}
-
-.justify-around{
-    justify-content: space-around;
-}
-
-.column{
-    flex-direction: column;
-}
-
-.full-width{
-    width: 100%;
-}
-
-.justify-between{
-    justify-content: space-between;
-}
-
-.items-center{
-    align-items: center;
-}
-
-.container{
-    max-width: 1000px;
+.grid {
+    max-width: 960px;
     margin: 0 auto;
-    width: 100%;
-    
-}
-
-.btn-padding{
-  padding: 0.5rem 8rem;
-}
-
-.padding{
-  padding: 2rem 0;
-}
-
-img{
-    width: 150px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+  
+  .card {
+    position: relative;
+    transition: all .4s linear;
+    transform-style: preserve-3d;
+    margin: 5px;
+  }
+  
+  .card,
+  .back,
+  .front {
     height: 150px;
-    background-size: 150px 150px;
-    border: 0px solid yellow;
-}
+    width: 150px;
+  }
+  
+  .back,
+  .front {
+    position: absolute;
+    backface-visibility: hidden;
+  }
+  
+  .front {
+    z-index: 2;
+    background: #FAB942 url('./img/question.gif') no-repeat center center / contain;
+  }
+  
+  .back {
+    transform: rotateY(180deg);
+    background-color: #6589F9;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+  
+  .selected {
+    transform: rotateY(180deg);
+  }
+  
+  .match .front {
+    background: #6589F9 !important;
+  }
